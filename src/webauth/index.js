@@ -49,8 +49,8 @@ export default class WebAuth {
             ...options,
             clientId,
             scope: scope.toString(),
-            responseType: 'code' + (scope.toString().includes('openid') ? ' id_token': ''),
-            response_mode: 'fragment', // 'query' is unsafe and not supported, the hash fragment is also default
+            responseType: 'code' ,
+            response_mode: 'query', // 'query' is unsafe and not supported, the hash fragment is also default
             state: state,
             nonce: nonce,
             code_challenge_method: 'plain',
@@ -111,7 +111,7 @@ export default class WebAuth {
         }
     }
 
-    
+
     /**
    *  Removes Azure session
    *
